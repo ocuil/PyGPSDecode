@@ -44,11 +44,11 @@ def clientthread(conn):
         print(str(data))
         log(data)
 
-        if data.find("##") > -1:
-            conn.send("LOAD")
+        if data.find(b'##') > -1:
+            conn.send(b'LOAD')
 
         if len(data) == 15:
-            conn.send("ON")
+            conn.send(b'ON')
 
     # came out of loop
     conn.close()
